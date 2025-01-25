@@ -1,0 +1,42 @@
+<header class="bg-red-600 text-white shadow-md">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Logo -->
+    <a routerLink="/" class="text-2xl font-bold hover:text-red-100">
+      BloodFinder
+    </a>
+
+    <!-- Navigation Menu -->
+    <nav class="hidden md:flex space-x-6">
+      <a routerLink="" class="hover:text-red-200">Home</a>
+      <a routerLink="/about" class="hover:text-red-200">About</a>
+      <a routerLink="/admin/donors" class="hover:text-red-200">Find Donors</a>
+    </nav>
+
+    <!-- Login & Registration -->
+    <div class="flex space-x-4">
+      <a routerLink="/login" class="px-4 py-2 bg-white text-red-600 font-medium rounded-lg hover:bg-red-100">
+        Login
+      </a>
+      <a routerLink="/register" class="px-4 py-2 bg-red-700 font-medium rounded-lg hover:bg-red-800">
+        Register
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden flex items-center px-3 py-2 border rounded text-white border-white hover:bg-red-500"
+      (click)="toggleMenu()">
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-red-700 text-white">
+    <nav class="flex flex-col items-center space-y-4 p-4">
+      <a routerLink="/home" class="hover:text-red-200">Home</a>
+      <a routerLink="/about" class="hover:text-red-200">About</a>
+      <a routerLink="/donors" class="hover:text-red-200">Find Donors</a>
+    </nav>
+  </div>
+</header>

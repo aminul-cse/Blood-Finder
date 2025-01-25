@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-mt {
+  @apply mt-10;
+}
+
+.section-gap{
+  @apply py-14;
+}

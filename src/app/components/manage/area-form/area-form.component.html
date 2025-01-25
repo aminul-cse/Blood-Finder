@@ -1,0 +1,25 @@
+<div class="flex flex-col container page-mt">
+  @if (isEdit) {
+    <h4>Update Area</h4>
+  }@else {
+    <h4>Add New Area</h4>
+  }
+  <form action="">
+    <div class="flex flex-col w-1/2 shadow-md rounded-md p-4">
+      <div class="w-full">
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input [(ngModel)]="name" name="name" matInput type="text">
+        </mat-form-field>
+      </div>
+      <div>
+        @if (isEdit) {
+          <button mat-raised-button color="primary" [disabled]="!name" (click)="update()">Update</button>
+        }@else {
+          <button mat-raised-button color="primary" [disabled]="!name" (click)="add()">Add</button>
+        }
+      </div>
+    </div>
+  </form>
+
+</div>
